@@ -24,3 +24,15 @@ jobs:
       # Step 3: Verify the files are present
       - name: List Files
         run: ls -R
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: echo "Running tests"
+    
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Project
+        run: echo "Building project"
