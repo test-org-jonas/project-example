@@ -1,0 +1,17 @@
+name: Manual Trigger Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Where do you live'
+        required: true
+        default: 'Berlin'
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet User
+        run: echo "Hello, you live in ${{ github.event.inputs.name }}!"
