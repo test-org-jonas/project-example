@@ -46,7 +46,7 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
-    needs: say-hello
+    needs: test
     steps:
       - name: Deploying
         run: echo "Deploying to production..."
