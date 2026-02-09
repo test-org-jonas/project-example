@@ -1,4 +1,4 @@
-name: Manual Trigger Workflow
+name: 2.01 - Manual Trigger Workflow (Day 2 Ex 1)
 
 on:
   workflow_dispatch:
