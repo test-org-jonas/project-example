@@ -1,5 +1,8 @@
 name: Hello World Workflow
 
+env:
+  APP_ENV: development
+
 on:
   push:
     branches:
@@ -29,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Project
-        run: echo "Building project"
+        run: echo "Building project in $APP_ENV environment"
 
   test:
     runs-on: ubuntu-latest
