@@ -1,0 +1,26 @@
+name: 2.03 - Save Test Logs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Tests
+        continue-on-error: true
+        run: |
+          echo "Starting tests..." > test.log
+          echo "Error: Database connection failed" >> test.log
+          exit 1 
+
+      - name: Upload Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test.log
