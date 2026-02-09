@@ -32,7 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Project
-        run: echo "Building project in $APP_ENV environment"
+        run: echo "Building project in $APP_ENV environment. Current Stage - $stage"
+        env:
+          stage: build
 
   test:
     runs-on: ubuntu-latest
