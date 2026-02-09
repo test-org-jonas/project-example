@@ -9,5 +9,14 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the code so the runner can access it
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Run the previous greeting command
       - name: Print Greeting
         run: echo "Hello, GitHub Actions!"
+      
+      # Step 3: Verify the files are present
+      - name: List Files
+        run: ls -R
